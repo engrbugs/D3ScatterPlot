@@ -15,7 +15,7 @@
         }
 
         body {
-            background-image: linear-gradient(to right top, #b22234, #a71d4b, #95245e, #7d2e6b, #623671, #63477e, #665888, #6b6791, #8f8bac, #b3b0c7, #d9d7e3, #ffffff);
+            background-image: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -31,21 +31,7 @@
         }
 
         svg {
-            border: 2px solid white;
-            box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, 0.02),
-                0 7px 5.4px rgba(0, 0, 0, 0.028), 0 12.1px 10.1px rgba(0, 0, 0, 0.035),
-                0 19.8px 18.1px rgba(0, 0, 0, 0.042), 0 34.7px 33.8px rgba(0, 0, 0, 0.05),
-                0 81px 81px rgba(0, 0, 0, 0.07);
-            background-color: rgba(255, 255, 255, 0.85);
             border-radius: 4px;
-        }
-
-        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-            svg {
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
-                background-color: rgba(255, 255, 255, 0.85);
-            }
         }
 
         rect {
@@ -76,7 +62,7 @@
         }
     </style>
 <body>
-    <h1 id="title">USA GDP 1950 to 2015</h1>
+    <h1 id="title">Doping VS. Non-Doping in Professional Bicycle Racing</h1>
     <div id="tooltip" class="tooltip"></div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.1.1/d3.min.js" integrity="sha512-5xkNvFVCctXwOszeifE8pzjyDFlHvHDCKIrhwmuSbCtTHqc7IhA6/1tTNYXE8WmYvwP5KFQegCS1QRR4poYgjg==" crossorigin="anonymous"></script>

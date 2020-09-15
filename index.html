@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualize Data with a Bar Chart</title>
+    <link rel="icon" href="https://img.icons8.com/ultraviolet/40/000000/us-dollar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet" />
+</head>	
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-image: linear-gradient(to right top, #b22234, #a71d4b, #95245e, #7d2e6b, #623671, #63477e, #665888, #6b6791, #8f8bac, #b3b0c7, #d9d7e3, #ffffff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: larger;
+            margin: -40px 0 12px;
+            color: #222f3e;
+        }
+
+        svg {
+            border: 2px solid white;
+            box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, 0.02),
+                0 7px 5.4px rgba(0, 0, 0, 0.028), 0 12.1px 10.1px rgba(0, 0, 0, 0.035),
+                0 19.8px 18.1px rgba(0, 0, 0, 0.042), 0 34.7px 33.8px rgba(0, 0, 0, 0.05),
+                0 81px 81px rgba(0, 0, 0, 0.07);
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 4px;
+        }
+
+        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+            svg {
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                background-color: rgba(255, 255, 255, 0.85);
+            }
+        }
+
+        rect {
+            fill: #3C3B6E;
+        }
+        rect:hover {
+            fill: #B22234;
+        }
+
+        .tooltip {
+            padding-top: 8px;
+            background-color: #6D6D6D;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 50px;
+            width: 150px;
+            font-size: 14px;
+            border-radius: 2px;
+            z-index: 100;
+            visibility: hidden;
+            color: whitesmoke;
+            opacity: 0.9;
+        }
+    </style>
+<body>
+    <h1 id="title">USA GDP 1950 to 2015</h1>
+    <div id="tooltip" class="tooltip"></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.1.1/d3.min.js" integrity="sha512-5xkNvFVCctXwOszeifE8pzjyDFlHvHDCKIrhwmuSbCtTHqc7IhA6/1tTNYXE8WmYvwP5KFQegCS1QRR4poYgjg==" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>

@@ -33,30 +33,32 @@
             text-align: left;
         }
 
-        g .tick {
-            padding-right: 10px;
-            text-align: left;
+        .legend {
+            position: absolute;
+            top: 0;
+            right: 0;
+            text-align: right;
         }
 
-        rect {
-            fill: #3C3B6E;
+        .legend p {
+            margin: 5px;
         }
-        rect:hover {
-            fill: #B22234;
+
+        .legend .box {
+            background-color: orange;
+            height: 20px;
+            width: 20px;
         }
 
         .tooltip {
-            padding-top: 8px;
+            font-family: sans-serif;
+            padding: 8px;
             background-color: #6D6D6D;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
             position: absolute;
-            top: 100px;
-            left: 100px;
-            height: 50px;
-            width: 150px;
             font-size: 14px;
             border-radius: 2px;
             z-index: 100;
@@ -69,7 +71,14 @@
     <h1 id="title">Doping VS. Non-Doping in Professional Bicycle Racing</h1>
     <div id="tooltip" class="tooltip"></div>
     <div id="legend" class="legend">
-        This graph is handsome
+        <p>
+            No Doping Allegations
+            <div class="box no-doping"></div>
+        </p>
+        <p>
+            Riders with Doping Allegations
+            <div class="box doping"></div>
+        </p>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.1.1/d3.min.js" integrity="sha512-5xkNvFVCctXwOszeifE8pzjyDFlHvHDCKIrhwmuSbCtTHqc7IhA6/1tTNYXE8WmYvwP5KFQegCS1QRR4poYgjg==" crossorigin="anonymous"></script>

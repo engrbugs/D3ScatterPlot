@@ -20,7 +20,7 @@ fetch(
 function createGraph(data) {
   console.log(data);
   var width = $(window).width() - 480,
-    height = $(window).height() - 280,
+    height = $(window).height() - 180,
     xPadding = 60,
     yPadding = 40,
     xyrPadding = 40,
@@ -55,13 +55,17 @@ function createGraph(data) {
     .attr("r", 6)
     .attr("cx", (d) => xScale(d[1]))
     .attr("cy", (d) => yScale(d[0]) + yPadding - xyrPadding)
+    .attr("fill", d => d[2] === '' ? 'red' : 'blue')
+    .attr("fill-opacity", "50%")
+    .attr("stroke", "black")
     .on("mousemove", (d, item) => {
       tooltip.style.left = d.pageX + (xyrPadding / 2) + "px";
       tooltip.style.top = d.pageY - xyrPadding + "px";
       tooltip.innerHTML = `
       Name: ${item[3]} ${item[4]? `(${item[4]})` : ``}<br/>
       Time: ${item[0].getMinutes()}:${item[0].getSeconds()} Year: ${item[1]}<br/>
-      <small><em>${item[2] ? "&ldquo;"+item[2]+"&rdquo;" : ''}</small>`
+      <small><em>${item[2] ? "&ldquo;"+item[2]+"&rdquo;" : ''}</small>`;
+
       tooltip.setAttribute("data-year", item[1]);
     })
     .on("mouseover", () => (tooltip.style.visibility = "visible"))

@@ -38,43 +38,41 @@ function createGraph(data) {
         .enter()
         .append('circle')
         .attr('class', 'dot')
-        .attr('data-date', d => d[0])
-        .attr('data-gdp',d => d[1])
+        .attr('data-xvalue', d => d[1])
+        .attr('data-yvalue',d => d[0])
         .attr('r', 6)
         .attr('cx', d => xScale(d[1]) )
         .attr('cy', d => yScale(d[0]) + yPadding - xyrPadding)
-        // .attr('x', (d, i) => i * barWidth + xPadding)
-        // .attr('y', d => yScale(d[1]) - yPadding + xyrPadding)
-        // .attr('width', barWidth)
-        // .attr('height', d => height - yScale(d[1]) + yPadding + 'px')
-        // .on('mousemove',  (d, item) => {
-        //     let yearLine = "";
-        //     switch(item[0].substring(5, 7)) {
-        //         case '01':
-        //             yearLine = item[0].substring(0, 4) + ' Q1';
-        //             break;
-        //         case '04':
-        //             yearLine = item[0].substring(0, 4) + ' Q2';
-        //             break;
-        //         case '07':
-        //             yearLine = item[0].substring(0, 4) + ' Q3';
-        //             break;
-        //         case '10':
-        //             yearLine = item[0].substring(0, 4) + ' Q4';
-        //             break;
-        //         default:
-        //           // code block
-        //       };
+        .on('mousemove',  (d, item) => {
+            // console.log(d, item)
+            let yearLine = "";
+            // switch(item[0].substring(5, 7)) {
+            //     case '01':
+            //         yearLine = item[0].substring(0, 4) + ' Q1';
+            //         break;
+            //     case '04':
+            //         yearLine = item[0].substring(0, 4) + ' Q2';
+            //         break;
+            //     case '07':
+            //         yearLine = item[0].substring(0, 4) + ' Q3';
+            //         break;
+            //     case '10':
+            //         yearLine = item[0].substring(0, 4) + ' Q4';
+            //         break;
+            //     default:
+            //         yearLine = 'hahahah';
+            //       // code block
+            //   };
 
-        //     let gdpLine = "$ " + item[1].toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' Billion'
+            let gdpLine = "$ " + item[1].toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' Billion'
 
-        //     tooltip.style.left = d.pageX + xyrPadding + 'px';
-        //     tooltip.style.top = height + xyrPadding + 'px';
-        //     tooltip.innerHTML = yearLine + "<br/>" + gdpLine;
-        //     tooltip.setAttribute("data-date", item[0]);
-        // })
-        // .on('mouseover', () => tooltip.style.visibility = "visible")
-        // .on('mouseout', () => tooltip.style.visibility = "hidden")
+            tooltip.style.left = d.pageX + xyrPadding + 'px';
+            tooltip.style.top = d.pageY - xyrPadding + 'px';
+            tooltip.innerHTML = yearLine + "<br/>" + gdpLine;
+            tooltip.setAttribute("data-year", item[1]);
+        })
+        .on('mouseover', () => tooltip.style.visibility = "visible")
+        .on('mouseout', () => tooltip.style.visibility = "hidden")
 
 
 

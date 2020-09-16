@@ -55,7 +55,7 @@ function createGraph(data) {
     .attr("r", 6)
     .attr("cx", (d) => xScale(d[1]))
     .attr("cy", (d) => yScale(d[0]) + yPadding - xyrPadding)
-    .attr("fill", d => d[2] === '' ? 'red' : 'blue')
+    .attr("fill", d => d[2] === '' ? 'blue' : 'red')
     .attr("fill-opacity", "50%")
     .attr("stroke", "black")
     .on("mousemove", (d, item) => {
